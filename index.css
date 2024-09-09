@@ -1,0 +1,387 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+section{
+    height: 100vh;
+}
+
+/* <----- First Page -----> */
+
+.one{
+    background-color: #efeee5;
+    display: flex;
+    overflow: hidden;
+}
+
+#intro{
+    width: calc(100% - 50%);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeInRight 3s forwards;
+}
+  
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#intro h1{
+    font-size: 70px;
+    margin-left: 5vh;
+}
+
+#intro p {
+    font-size: 25px;
+    margin-left: 5vh;
+    text-indent: 100px;
+    opacity: 0;
+    animation: fadeToTop 4s forwards;
+}
+
+@keyframes fadeToTop {
+    0% {
+        transform: translate(-100px, 100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 30px);
+        opacity: 1;
+    }
+}
+
+/* <----- Button -----> */
+
+.hover-btn{
+    transform: translateY(20vh);
+}
+
+.button {
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+    width: 15em;
+    padding: 1em;
+    background-color: #79BD9A;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: btnFadeUp 4s forwards;
+}
+
+@keyframes btnFadeUp {
+    0% {
+        opacity: 0;
+        transform: translate(50px, 75px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* <----- The arrow in the button -----> */
+
+.pajamas--arrow-down {
+    right: 1em;
+    position: absolute;
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M10.72 10.159a.75.75 0 1 1 1.06 1.06l-3.25 3.25L8 15l-.53-.53l-3.25-3.25a.75.75 0 0 1 1.06-1.061l1.97 1.97V1.75a.75.75 0 1 1 1.5 0v10.379z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.button:hover .pajamas--arrow-down{
+    animation: UpDown 1.5s infinite;
+}
+
+@keyframes UpDown {
+    0%{
+        transform: translateY(3px);
+    }
+    50%{
+        transform: translateY(-3px);
+    }
+    100%{
+        transform: translateY(3px);
+    }
+}
+
+/* <----- Radial Out -----> */
+
+.hvr-radial-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #274546;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+    color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+}
+
+/* <----- Image -----> */
+
+.one img{
+    margin: 15vh auto;
+    height: 70vh;
+    animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* <----- Second Page -----> */
+
+.two{
+    background-color: #efeee5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card{
+    width: 50vh;
+    height: 80vh;
+    border: 1px solid;
+    display: flex;
+    overflow: hidden;
+}
+
+.card img{
+    width: 100%;
+}
+
+.hidden-form{
+    width: 50vh;
+    height: 80vh;
+    position: absolute;
+    opacity: 0;
+}
+
+.card h1{
+    margin: 0 10px;
+    font-size: 50px;
+    width: auto;
+    height: calc(100% - 40%);
+    color: #efeee5;
+    background: rgb(39,69,70);
+    background: radial-gradient(circle, rgba(39,69,70,0.8) 0%, rgba(239,238,229,0) 100%); 
+}
+
+.card p{
+    margin: 0 10px;
+    text-indent: 2em;
+    font-size: 1em;
+    width: auto;
+    height: calc(100% - 40%);
+    color: white;
+}
+
+.card a{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #efeee5;
+}
+
+.card a:hover{
+    background: rgb(39,69,70);
+    background: radial-gradient(circle, rgba(39,69,70,0.8) 0%, rgba(239,238,229,0) 100%); 
+    color: #efeee5;
+    border: 1px solid;
+}
+
+/* <----- Card 1 -----> */
+
+#R-S:hover #form-1{
+    display: grid;
+    animation: formUp 500ms forwards;
+}
+
+#R-S:not(:hover) #form-1{
+    display: grid;
+    animation: formDown 500ms reverse;
+}
+
+/* <----- Card 1: Hover -----> */
+
+.card-1:hover{
+    animation: cardUp 500ms forwards;
+}
+
+.card-1:not(:hover){
+    animation: cardDown 500ms reverse;
+}
+
+/* <----- Card 2 -----> */
+
+#foods:hover #form-2{
+    display: grid;
+    animation: formUp 500ms forwards;
+}
+
+#foods:not(:hover) #form-2{
+    display: grid;
+    animation: formDown 500ms reverse;
+}
+
+/* <----- Card 2: Hover -----> */
+
+.card-2:hover{
+    animation: cardUp 500ms forwards;
+}
+
+.card-2:not(:hover){
+    animation: cardDown 500ms reverse;
+}
+
+/* <----- Card 3 -----> */
+
+#p-f:hover #form-3{
+    display: grid;
+    animation: formUp 500ms forwards;
+}
+
+#p-f:not(:hover) #form-3{
+    display: grid;
+    animation: formDown 500ms reverse;
+}
+
+/* <----- Card 3: Hover -----> */
+
+.card-3:hover{
+    animation: cardUp 500ms forwards;
+}
+
+.card-3:not(:hover){
+    animation: cardDown 500ms reverse;
+}
+
+/* <----- Card 1 + 2 + 3: Card-Up/Down -----> */
+
+@keyframes cardUp{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-15px);
+        box-shadow: 10px 10px 10px #274546af,
+                    -10px -10px 10px #356c6c77;
+    }
+}
+
+@keyframes cardDown{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-15px);
+        box-shadow: 10px 10px 10px #274546af,
+                    -10px -10px 10px #356c6c77;
+    }
+}
+
+/* <----- Card 1 + 2 + 3: fadeIn -----> */
+
+@keyframes formUp{
+    0%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        background: rgb(39,69,70);
+        background: linear-gradient(0deg, rgba(39,69,70,0.8) 0%, rgba(239,238,229,0) 100%);
+    }
+}
+
+@keyframes formDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(-100px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        background: rgb(39,69,70);
+        background: linear-gradient(0deg, rgba(39,69,70,0.8) 0%, rgba(239,238,229,0) 100%);
+    }
+}
